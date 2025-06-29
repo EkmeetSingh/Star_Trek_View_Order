@@ -1,0 +1,68 @@
+<!--
+Index.html
+Main HTML file for the Star Trek Viewing Order interactive timeline project.
+- Uses Tailwind CSS for utility classes and Google Fonts for typography.
+- Links to external CSS (css/style.css) and JavaScript (js/main.js).
+- Contains the structure for the timeline carousel, navigation, and theme/order toggles.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Star Trek Viewing Order</title>
+    <!-- Tailwind CSS for utility classes -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Project custom styles -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="antialiased">
+    <div class="min-h-screen flex flex-col items-center justify-center p-4">
+        <div class="w-full max-w-5xl mx-auto">
+            <header class="text-center mb-8">
+                <h1 class="text-3xl md:text-5xl font-bold text-white tracking-tight">Star Trek Viewing Order</h1>
+                <p class="text-lg text-gray-400 mt-2">Click on a card to flip it for more details.</p>
+            </header>
+            <!-- Timeline carousel container -->
+            <div id="timelineContainer" class="timeline-container">
+                <div id="card-slider"></div>
+            </div>
+            <!-- Navigation buttons and step counter -->
+            <div class="flex items-center justify-center space-x-4 mt-8">
+                <button id="prevBtn" class="nav-btn bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 px-6 rounded-lg shadow-md disabled:bg-gray-800">Previous</button>
+                <div id="stepCounter" class="text-lg font-medium text-gray-300"></div>
+                <button id="nextBtn" class="nav-btn bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-3 px-6 rounded-lg shadow-md">Next</button>
+            </div>
+            <!-- Toggles for viewing order and theme -->
+            <div class="flex flex-col items-center justify-center mt-6 space-y-4">
+                <div class="flex items-center space-x-3">
+                    <span id="chronoLabel" class="toggle-label font-semibold text-indigo-400">Story Chronology</span>
+                    <label for="orderToggle" class="flex items-center cursor-pointer">
+                        <div class="relative">
+                            <input type="checkbox" id="orderToggle" class="sr-only">
+                            <div class="toggle-bg block bg-gray-600 w-14 h-8 rounded-full"></div>
+                            <div id="orderDot" class="dot absolute left-1 top-1 bg-white w-6 h-6 rounded-full"></div>
+                        </div>
+                    </label>
+                    <span id="releaseLabel" class="toggle-label font-semibold text-gray-500">Release Date</span>
+                </div>
+                <div class="flex items-center space-x-3">
+                    <span id="darkLabel" class="toggle-label font-semibold text-indigo-400">Dark Theme</span>
+                    <label for="themeToggle" class="flex items-center cursor-pointer">
+                        <div class="relative">
+                            <input type="checkbox" id="themeToggle" class="sr-only">
+                            <div class="toggle-bg block bg-gray-600 w-14 h-8 rounded-full"></div>
+                            <div id="themeDot" class="dot absolute left-1 top-1 bg-white w-6 h-6 rounded-full"></div>
+                        </div>
+                    </label>
+                    <span id="lightLabel" class="toggle-label font-semibold text-gray-500">Light Theme</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Main JavaScript for timeline interactivity -->
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+/*
+css/style.css
+Custom styles for the Star Trek Viewing Order project.
+- Handles dark and light theme styling.
+- Styles the timeline carousel, flip cards, navigation buttons, and toggles.
+- Complements Tailwind CSS utility classes for advanced layout and effects.
+*/
+
+/* Base styles (Dark Theme by default) */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #0a0a0a;
+    color: #e5e5e5;
+    overflow-x: hidden;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+/* Viewport for the carousel */
+.timeline-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    min-height: 320px;
+    overflow: hidden;
+}
+#card-slider {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    transition: transform 0.5s ease-in-out;
+}
+.timeline-card-wrapper {
+    margin: 0 1rem;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+.flip-card {
+    background-color: transparent;
+    width: 300px;
+    height: 280px;
+    perspective: 1000px;
+}
+@media (max-width: 768px) { .flip-card { width: 70vw; } }
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    border-radius: 0.5rem;
+}
+.flip-card.is-flipped .flip-card-inner { transform: rotateY(180deg); }
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    text-align: left;
+}
+.flip-card-back {
+    transform: rotateY(180deg);
+    overflow-y: auto;
+    scrollbar-width: thin;
+}
+/* Card Fronts - Dark Theme */
+.card-series-front { background: linear-gradient(145deg, #1f2937, #111827); border: 1px solid #374151; }
+.card-movie-front { background: linear-gradient(145deg, #4f46e5, #312e81); border: 1px solid #4f46e5; }
+.card-crossover-front { background: linear-gradient(145deg, #d97706, #b45309); border: 1px solid #f59e0b; }
+/* Card Backs - Dark Theme */
+.card-series-back { background-color: #1e293b; border: 1px solid #374151; }
+.card-movie-back { background-color: #3730a3; border: 1px solid #4f46e5; }
+.card-crossover-back { background-color: #92400e; border: 1px solid #f59e0b; }
+
+/* Light Theme Styles */
+body.light-theme {
+    background-color: #f3f4f6;
+    color: #111827;
+}
+.light-theme h1, .light-theme .text-lg { color: #111827; }
+.light-theme .nav-btn { background-color: #4b5563; color: white; }
+.light-theme .nav-btn:hover { background-color: #374151; }
+.light-theme #stepCounter { color: #374151; }
+/* Card Fronts - Light Theme */
+.light-theme .card-series-front { background: linear-gradient(145deg, #d1d5db, #9ca3af); border: 1px solid #9ca3af; color: #1f2937; }
+.light-theme .card-movie-front { background: linear-gradient(145deg, #a5b4fc, #818cf8); border: 1px solid #818cf8; color: #1e1b4b; }
+.light-theme .card-crossover-front { background: linear-gradient(145deg, #fbbf24, #f59e0b); border: 1px solid #f59e0b; color: #78350f; }
+/* Card Backs - Light Theme */
+.light-theme .card-series-back { background-color: #e5e7eb; border: 1px solid #9ca3af; color: #1f2937;}
+.light-theme .card-movie-back { background-color: #c7d2fe; border: 1px solid #818cf8; color: #1e1b4b;}
+.light-theme .card-crossover-back { background-color: #fde68a; border: 1px solid #f59e0b; color: #78350f;}
+.light-theme .flip-card-back strong, .light-theme .flip-card-front .font-bold { color: inherit; }
+.light-theme .flip-card-back p, .light-theme .flip-card-front p { color: inherit; opacity: 0.9;}
+
+.nav-btn { transition: all 0.3s ease; }
+.nav-btn:hover { transform: translateY(-2px); box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); }
+.nav-btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; box-shadow: none; }
+
+.toggle-label { transition: color 0.3s ease; }
+.toggle-bg { transition: background-color 0.3s ease; }
+.dot { transition: transform 0.3s ease; }
