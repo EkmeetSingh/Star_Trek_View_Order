@@ -66,7 +66,18 @@ body {
 .flip-card-back {
     transform: rotateY(180deg);
     overflow-y: auto;
-    scrollbar-width: thin;
+    /* Custom scrollbar for Firefox */
+    /* Custom scrollbar for WebKit browsers */
+}
+.flip-card-back::-webkit-scrollbar {
+    width: 6px;
+}
+.flip-card-back::-webkit-scrollbar-thumb {
+    background: #374151;
+    border-radius: 4px;
+}
+.flip-card-back::-webkit-scrollbar-track {
+    background: transparent;
 }
 /* Card Fronts - Dark Theme */
 .card-series-front { background: linear-gradient(145deg, #1f2937, #111827); border: 1px solid #374151; }
