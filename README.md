@@ -14,6 +14,30 @@ Welcome to the **Star Trek Viewing Order** project! This interactive timeline he
 - **Responsive Design**: Works great on desktop and mobile.
 - **Accessible**: Keyboard navigable and screen reader friendly.
 
+
+## 🗂️ Project Structure
+
+```
+Star_Trek_View_Order/
+├── index.html                # Main HTML file
+├── css/
+│   └── style.css             # Custom styles (dark/light theme, carousel, cards)
+├── js/
+│   └── main.js               # Main JavaScript (timeline, theme, interactivity)
+├── assets/
+│   └── images/
+│       ├── Light_theme.png
+│       ├── Movie&TV_Show_Cards.png
+│       ├── Trivia_Cards.png
+│       └── jpeg/
+│           ├── Light_theme.jpeg
+│           ├── Movie&TV_Show_Cards.jpeg
+│           └── Trivia_Cards.jpeg
+├── LICENSE                   # Open source license (MIT)
+├── README.md                 # Project documentation
+└── ...
+```
+
 ## 🛠️ Tech Stack
 - **HTML5 & CSS3** (with [Tailwind CSS](https://tailwindcss.com/))
 - **JavaScript** (Vanilla, no frameworks)
