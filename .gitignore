@@ -1,2 +1,4 @@
 assets/images/
 # Ignore all images in the assets/images directory
+assets/images/jpg/
+# Ignore all jpg images in the assets/images directory

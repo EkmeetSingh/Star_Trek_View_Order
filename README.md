@@ -2,7 +2,9 @@
 
 Welcome to the **Star Trek Viewing Order** project! This interactive timeline helps fans explore the Star Trek universe in both story chronology and release order, with beautiful flip cards, theme toggles, and a modern responsive design.
 
-![Star Trek Timeline Demo](assets/images/Movie&TV_Show_Cards.jpeg)
+![Movies and TV Shows Card View](assets/images/Movie&TV_Show_Cards.png)
+![Trivia Cards](assets/images/Trivia_Cards.png)
+![Light Theme](assets/images/Light_theme.png)
 
 ## 🚀 Features
 - **Interactive Timeline Carousel**: Flip through series, movies, and crossovers.
