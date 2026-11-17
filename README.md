@@ -8,59 +8,78 @@ Welcome to the **Star Trek Viewing Order** project! This interactive timeline he
 
 ## 🚀 Features
 - **Interactive Timeline Carousel**: Flip through series, movies, and crossovers.
-- **Flip Cards**: Click to reveal more details about each entry.
+- **Flip Cards**: Click to reveal more details about each entry — summary, trivia, IMDb rating, and platform.
 - **Theme Toggle**: Instantly switch between dark and light modes.
 - **Order Toggle**: View by story chronology or original release date.
+- **Keyboard Navigation**: Use arrow keys to navigate and Enter/Space to flip cards.
 - **Responsive Design**: Works great on desktop and mobile.
-- **Accessible**: Keyboard navigable and screen reader friendly.
+- **Accessible**: Keyboard navigable, screen reader friendly with ARIA labels, and focus indicators.
 
+## 📖 How It Works
+
+The timeline presents **41 entries** — TV series (by season blocks), movies, and crossover viewing notes — in two orderings:
+
+- **Story Chronology**: The order events happen within the Star Trek universe, from *Enterprise* (2150s) through *Discovery* Season 5 (32nd century), including crossover points that tell you when to start watching overlapping shows (e.g., TNG Season 6 → start DS9).
+- **Release Date**: The order the shows and movies were originally broadcast or released, automatically sorted by year.
+
+Each card flips to reveal the release year, platform (TV/OTT/Theater), IMDb rating, a summary, and a trivia fact.
 
 ## 🗂️ Project Structure
 
 ```
 Star_Trek_View_Order/
-├── index.html                # Main HTML file
-├── css/
-│   └── style.css             # Custom styles (dark/light theme, carousel, cards)
-├── js/
-│   └── main.js               # Main JavaScript (timeline, theme, interactivity)
+├── index.html          # Main HTML file
+├── style.css           # Custom styles (dark/light theme, carousel, cards)
+├── script.js           # Main JavaScript (timeline, theme, interactivity)
+├── data/
+│   └── timeline.json   # Timeline data (series, movies, crossovers)
 ├── assets/
-│   └── images/
-│       ├── Light_theme.png
-│       ├── Movie&TV_Show_Cards.png
-│       ├── Trivia_Cards.png
-│       └── jpeg/
-│           ├── Light_theme.jpeg
-│           ├── Movie&TV_Show_Cards.jpeg
-│           └── Trivia_Cards.jpeg
-├── LICENSE                   # Open source license (MIT)
-├── README.md                 # Project documentation
-└── ...
+│   ├── favicon.svg     # Site favicon (delta shield)
+│   └── images/         # Screenshots for README
+├── .github/
+│   └── workflows/      # Azure Static Web Apps CI/CD
+├── CONTRIBUTING.md     # Contribution guidelines
+├── LICENSE             # Open source license (MIT)
+└── README.md           # This file
 ```
 
 ## 🛠️ Tech Stack
-- **HTML5 & CSS3** (with [Tailwind CSS](https://tailwindcss.com/))
-- **JavaScript** (Vanilla, no frameworks)
+- **HTML5 & CSS3** (with [Tailwind CSS](https://tailwindcss.com/) via CDN)
+- **JavaScript** (Vanilla, no frameworks or build tools)
 - **Google Fonts** ([Inter](https://fonts.google.com/specimen/Inter))
+- **Azure Static Web Apps** for deployment
 
 ## 🌟 Get Started
 1. **Clone the repository:**
    ```sh
-   git clone https://github.com/your-username/Star_Trek_View_Order.git
+   git clone https://github.com/EkmeetSingh/Star_Trek_View_Order.git
    cd Star_Trek_View_Order
    ```
 2. **Open `index.html` in your browser.**
    - No build step required! All assets are ready to go.
 
+## 🧰 Development
+
+For a better development experience with auto-reloading:
+
+```sh
+# Using npx (Node.js required)
+npx serve .
+
+# Or use the Live Server extension in VS Code
+```
+
+The timeline data lives in [`data/timeline.json`](data/timeline.json) and can be edited without touching the JavaScript logic. See [CONTRIBUTING.md](CONTRIBUTING.md) for the data schema and code style guidelines.
+
 ## 🤝 Contributing
 We welcome contributions of all kinds! Whether you want to add new features, improve accessibility, fix bugs, or enhance the timeline data, your help is appreciated.
 
-- Please open an [issue](https://github.com/your-username/Star_Trek_View_Order/issues) to discuss ideas or report bugs.
+- Please open an [issue](https://github.com/EkmeetSingh/Star_Trek_View_Order/issues) to discuss ideas or report bugs.
 - Fork the repo, make your changes, and submit a pull request.
-- See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines (coming soon).
+- See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines.
 
 ## 📄 License
-This project is open source under the [MIT License](LICENSE). See below for details.
+This project is open source under the [MIT License](LICENSE).
 
 ## 💬 Community & Support
 - Star Trek fans and web developers are welcome!

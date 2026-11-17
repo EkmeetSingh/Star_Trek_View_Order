@@ -1,10 +1,15 @@
 /*
-css/style.css
+style.css
 Custom styles for the Star Trek Viewing Order project.
 - Handles dark and light theme styling.
 - Styles the timeline carousel, flip cards, navigation buttons, and toggles.
 - Complements Tailwind CSS utility classes for advanced layout and effects.
 */
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
 
 /* Base styles (Dark Theme by default) */
 body {
@@ -38,6 +43,7 @@ body {
     width: 300px;
     height: 280px;
     perspective: 1000px;
+    cursor: pointer;
 }
 @media (max-width: 768px) { .flip-card { width: 70vw; } }
 .flip-card-inner {
@@ -67,8 +73,10 @@ body {
     transform: rotateY(180deg);
     overflow-y: auto;
     /* Custom scrollbar for Firefox */
-    /* Custom scrollbar for WebKit browsers */
+    scrollbar-width: thin;
+    scrollbar-color: #374151 transparent;
 }
+/* Custom scrollbar for WebKit browsers */
 .flip-card-back::-webkit-scrollbar {
     width: 6px;
 }
@@ -107,6 +115,13 @@ body.light-theme {
 .light-theme .card-crossover-back { background-color: #fde68a; border: 1px solid #f59e0b; color: #78350f;}
 .light-theme .flip-card-back strong, .light-theme .flip-card-front .font-bold { color: inherit; }
 .light-theme .flip-card-back p, .light-theme .flip-card-front p { color: inherit; opacity: 0.9;}
+/* Light theme scrollbar */
+.light-theme .flip-card-back {
+    scrollbar-color: #9ca3af transparent;
+}
+.light-theme .flip-card-back::-webkit-scrollbar-thumb {
+    background: #9ca3af;
+}
 
 .nav-btn { transition: all 0.3s ease; }
 .nav-btn:hover { transform: translateY(-2px); box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); }
@@ -115,3 +130,24 @@ body.light-theme {
 .toggle-label { transition: color 0.3s ease; }
 .toggle-bg { transition: background-color 0.3s ease; }
 .dot { transition: transform 0.3s ease; }
+
+/* Focus styles for accessibility */
+.flip-card:focus-visible {
+    outline: 2px solid #818cf8;
+    outline-offset: 4px;
+    border-radius: 0.5rem;
+}
+.nav-btn:focus-visible {
+    outline: 2px solid #818cf8;
+    outline-offset: 2px;
+}
+
+/* Loading state */
+.loading-spinner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 280px;
+    color: #9ca3af;
+    font-size: 1.125rem;
+}
